@@ -325,22 +325,24 @@ body {
 
 .about-deskripsi {
   font-size: 18px;
-
   color: #555;
-
   line-height: 1.8;
-
   margin-bottom: 40px;
+  text-align: left;
+
+  width: 100%;
+  max-width: 650px;
 }
 
 .tambahan {
   font-size: 18px;
-
   color: #555;
-
   line-height: 1.8;
-
   margin-bottom: 40px;
+  text-align: left;
+
+  width: 100%;
+  max-width: 650px;
   display: none;
 }
 
@@ -1141,13 +1143,13 @@ body {
   }
 
   .about-deskripsi {
-    font-size: 22px;
-    line-height: 1.8;
+    font-size: 18px; /* Mengembalikan ke 18px agar proporsional */
+    max-width: 580px;
   }
 
   .tambahan {
-    font-size: 22px;
-    line-height: 1.8;
+    font-size: 18px; /* Mengembalikan ke 18px agar proporsional */
+    max-width: 580px;
   }
 
   .btn-about {
@@ -1283,13 +1285,22 @@ body {
   }
 
   .lokasi {
-    padding: 80px 5%;
+    padding: 70px 5%;
     gap: 40px;
+    display: flex;
+    justify-content: center; /* KUNCI UTAMA: Membawa seluruh konten teks & gambar ke tengah layar */
+    align-items: center;
   }
 
   .lokasi-deskripsi {
     width: 100%;
     max-width: 420px;
+    text-align: left; /* Teks di dalam kotak tetap rapi rata kiri */
+  }
+
+  .lokasi-subtitle {
+    font-size: 30px;
+    margin-bottom: 25px;
   }
 
   .lokasi-image {
@@ -1297,12 +1308,12 @@ body {
     max-width: 460px;
   }
 
-  .lokasi-subtitle {
-    font-size: 32px;
-  }
-
   .lokasi-image img {
-    max-height: 380px; /* Menurunkan batas tinggi maksimal di layar tanggung */
+    width: 100%;
+    height: auto;
+    max-height: 360px;
+    object-fit: contain;
+    box-shadow: none;
   }
 
   /* ================= CONTACT ================= */
@@ -1356,9 +1367,64 @@ body {
   }
 }
 
-/* ================================================= */
-/* ================== TABLET 768PX ================= */
-/* ================================================= */
+/* ==========================================================================
+   PERBAIKAN IPAD (IKON TETAP DI KIRI, BLOK GESER KE TENGAH)
+   ========================================================================== */
+@media (max-width: 820px) {
+  .lokasi {
+    flex-direction: column-reverse; /* Peta di atas, teks di bawah */
+    padding: 60px 6%;
+    gap: 40px;
+  }
+
+  .lokasi-deskripsi {
+    width: 100%;
+    max-width: 100%;
+    text-align: center; /* Mengetengahkan judul utama dan tombol */
+  }
+
+  .lokasi-subtitle {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  /* KUNCI: Blok alamat tetap rata kiri secara internal, tapi posisinya di tengah layar */
+  .lokasi-fitur {
+    margin-bottom: 25px;
+    padding-left: 45px; /* Tetap menjaga jarak ikon bawaan asli Anda */
+    position: relative;
+    text-align: left; /* Teks jalan dan jam tetap rapi rata kiri */
+
+    width: 100%;
+    max-width: 280px; /* Membatasi lebar kotak agar pas dengan panjang teks */
+    margin: 0 auto 25px; /* Menggeser kotak alamat murni ke tengah halaman */
+  }
+
+  .lokasi-fitur i {
+    position: absolute; /* Mengembalikan ikon terkunci rapi di kiri teks */
+    left: 0;
+    top: 2px;
+    font-size: 24px;
+    color: #d4a017;
+  }
+
+  .btn-lokasi {
+    display: inline-block;
+    margin-top: 15px;
+    width: auto; /* Tombol tidak dipaksa melar penuh */
+  }
+
+  .lokasi-image {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .lokasi-image img {
+    max-height: 360px;
+  }
+}
 
 @media screen and (max-width: 768px) {
   /* ============== NAVBAR ============== */
@@ -1481,11 +1547,15 @@ body {
   }
 
   .about-deskripsi {
-    font-size: 18px;
+    font-size: 18px; /* Diturunkan ke 16px agar tidak kebesaran di layar tablet */
+    max-width: 100%; /* Melebar penuh memanfaatkan seluruh ruang layar tablet */
+    line-height: 1.7;
   }
 
   .tambahan {
-    font-size: 18px;
+    font-size: 18px; /* Diturunkan ke 16px agar tidak kebesaran di layar tablet */
+    max-width: 100%; /* Melebar penuh memanfaatkan seluruh ruang layar tablet */
+    line-height: 1.7;
   }
 
   .btn-about {
@@ -1788,11 +1858,17 @@ body {
   }
 
   .about-deskripsi {
-    font-size: 16px;
+    font-size: 14.5px; /* Ukuran font paling ideal untuk keterbacaan di HP */
+    max-width: 100%; /* Melebar penuh kanan-kiri mengikuti layar HP */
+    line-height: 1.6; /* Jarak antar baris dirapatkan sedikit agar terlihat padat estetik */
+    margin-bottom: 30px;
   }
 
   .tambahan {
-    font-size: 16px;
+    font-size: 14.5px; /* Ukuran font paling ideal untuk keterbacaan di HP */
+    max-width: 100%; /* Melebar penuh kanan-kiri mengikuti layar HP */
+    line-height: 1.6; /* Jarak antar baris dirapatkan sedikit agar terlihat padat estetik */
+    margin-bottom: 30px;
   }
 
   .btn-about {
@@ -1895,48 +1971,67 @@ body {
   }
 
   .lokasi {
-    padding: 50px 5%;
-    gap: 35px;
+    padding: 45px 6%;
+    gap: 25px;
+  }
+
+  .lokasi-deskripsi {
+    width: 100%;
+    text-align: center; /* Menjaga judul tetap di tengah */
   }
 
   .lokasi-title {
-    font-size: 12px;
-    letter-spacing: 2px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
   }
 
   .lokasi-subtitle {
-    font-size: 24px;
+    font-size: 21px;
     margin-bottom: 25px;
+    line-height: 1.25;
   }
 
+  /* KUNCI PERBAIKAN: Bloknya bergeser ke tengah, tapi teks di dalamnya tetap rapi rata kiri */
   .lokasi-fitur {
     margin-bottom: 20px;
-    padding-left: 35px;
+    padding-left: 35px; /* Jarak aman antara ikon dan teks */
+    position: relative;
+    text-align: left; /* Mengunci teks agar tidak rata tengah yang berantakan */
+
+    width: 100%;
+    max-width: 250px; /* Membatasi lebar kotak sesuai panjang teks Anda */
+    margin: 0 auto 20px; /* PUSH KOTAK KE TENGAH LAYAR HP */
   }
 
   .lokasi-fitur i {
-    font-size: 20px;
-    top: 1px;
+    position: absolute; /* Mengunci ikon tetap rapi di samping teks */
+    left: 0;
+    top: 2px;
+    font-size: 18px;
   }
 
   .lokasi-teks {
-    font-size: 16px;
+    font-size: 14.5px;
+    font-weight: 600;
   }
 
   .lokasi-subteks {
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 1.4;
   }
 
   .btn-lokasi {
-    width: 100%; /* Tombol full-width di HP */
-    text-align: center;
-    padding: 12px 20px;
-    margin-top: 10px;
-    box-sizing: border-box;
+    width: 100%;
+    max-width: 280px; /* Menjaga tombol tetap pas di tengah */
+    padding: 12px 18px;
+    font-size: 13px;
+    margin-top: 15px;
+    display: inline-block;
   }
 
   .lokasi-image img {
-    max-height: 320px; /* Tinggi maksimal yang pas agar peta tetap proporsional di HP */
+    max-height: 220px;
   }
 
   /* ============== CONTACT ============== */
