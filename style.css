@@ -333,6 +333,21 @@ body {
   margin-bottom: 40px;
 }
 
+.tambahan {
+  font-size: 18px;
+
+  color: #555;
+
+  line-height: 1.8;
+
+  margin-bottom: 40px;
+  display: none;
+}
+
+.tambahan.show {
+  display: inline;
+}
+
 .btn-about {
   display: inline-block;
 
@@ -349,9 +364,11 @@ body {
   font-weight: 600;
 
   transition: 0.3s;
+  border: none;
 }
 
 .btn-about:hover {
+  cursor: pointer;
   transform: translateY(-5px);
 }
 
@@ -648,6 +665,121 @@ body {
   margin: 0;
 
   font-weight: 600;
+}
+
+/* ==========================================================================
+   LOKASI SECTION (MAIN DESIGN - CLEAN & TANPA SHADOW)
+   ========================================================================== */
+.lokasi {
+  padding: 90px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  background: #ffffff; /* Latar belakang putih bersih */
+  position: relative;
+  overflow: hidden;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.lokasi-deskripsi {
+  width: 100%;
+  max-width: 480px;
+}
+
+.lokasi-title {
+  color: #d4a017; /* Emas */
+  font-size: 13px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.lokasi-subtitle {
+  font-size: 36px;
+  color: #1a1a1a; /* Hitam arang */
+  margin-bottom: 35px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.lokasi-subtitle span {
+  color: #d4a017;
+}
+
+.lokasi-fitur {
+  margin-bottom: 25px;
+  padding-left: 45px;
+  position: relative;
+}
+
+.lokasi-fitur i {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 24px;
+  color: #d4a017;
+  transition: transform 0.3s ease;
+}
+
+.lokasi-fitur:hover i {
+  transform: translateY(-3px);
+}
+
+.lokasi-teks {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 5px;
+}
+
+.lokasi-subteks {
+  color: #666666;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.btn-lokasi {
+  display: inline-block;
+  margin-top: 15px;
+  background: #d4a017;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 4px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  /* Shadow tombol dihapus */
+}
+
+.btn-lokasi:hover {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.lokasi-image {
+  width: 100%;
+  max-width: 580px;
+  position: relative;
+}
+
+/* Bingkai emas belakang dihapus agar clean */
+
+.lokasi-image img {
+  width: 100%;
+  height: auto;
+  max-height: 440px;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+  /* Shadow gambar di bawah ini sudah dihapus total */
+  box-shadow: none;
 }
 
 #contact {
@@ -1013,6 +1145,11 @@ body {
     line-height: 1.8;
   }
 
+  .tambahan {
+    font-size: 22px;
+    line-height: 1.8;
+  }
+
   .btn-about {
     font-size: 20px;
     padding: 16px 36px;
@@ -1143,6 +1280,29 @@ body {
 
   .fitur-title-testimoni {
     font-size: 22px;
+  }
+
+  .lokasi {
+    padding: 80px 5%;
+    gap: 40px;
+  }
+
+  .lokasi-deskripsi {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .lokasi-image {
+    width: 100%;
+    max-width: 460px;
+  }
+
+  .lokasi-subtitle {
+    font-size: 32px;
+  }
+
+  .lokasi-image img {
+    max-height: 380px; /* Menurunkan batas tinggi maksimal di layar tanggung */
   }
 
   /* ================= CONTACT ================= */
@@ -1324,6 +1484,10 @@ body {
     font-size: 18px;
   }
 
+  .tambahan {
+    font-size: 18px;
+  }
+
   .btn-about {
     font-size: 18px;
     padding: 15px 30px;
@@ -1416,6 +1580,27 @@ body {
 
   .fitur-text-testimoni {
     font-size: 17px;
+  }
+
+  .lokasi {
+    flex-direction: column-reverse; /* Teks di atas, peta di bawah */
+    padding: 60px 6%;
+    gap: 45px;
+  }
+
+  .lokasi-deskripsi,
+  .lokasi-image {
+    width: 100%;
+    max-width: 100%; /* Melebar penuh kanan-kiri di tablet */
+  }
+
+  .lokasi-subtitle {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .lokasi-image img {
+    max-height: 500px; /* Memberi ruang lebih tinggi karena area melebar penuh */
   }
 
   /* ============== CONTACT ============== */
@@ -1606,6 +1791,10 @@ body {
     font-size: 16px;
   }
 
+  .tambahan {
+    font-size: 16px;
+  }
+
   .btn-about {
     width: 100%;
     max-width: 240px;
@@ -1703,6 +1892,51 @@ body {
 
   .fitur-title-testimoni {
     font-size: 18px;
+  }
+
+  .lokasi {
+    padding: 50px 5%;
+    gap: 35px;
+  }
+
+  .lokasi-title {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .lokasi-subtitle {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  .lokasi-fitur {
+    margin-bottom: 20px;
+    padding-left: 35px;
+  }
+
+  .lokasi-fitur i {
+    font-size: 20px;
+    top: 1px;
+  }
+
+  .lokasi-teks {
+    font-size: 16px;
+  }
+
+  .lokasi-subteks {
+    font-size: 14px;
+  }
+
+  .btn-lokasi {
+    width: 100%; /* Tombol full-width di HP */
+    text-align: center;
+    padding: 12px 20px;
+    margin-top: 10px;
+    box-sizing: border-box;
+  }
+
+  .lokasi-image img {
+    max-height: 320px; /* Tinggi maksimal yang pas agar peta tetap proporsional di HP */
   }
 
   /* ============== CONTACT ============== */
