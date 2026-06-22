@@ -17,6 +17,10 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
   </head>
   <body>
     <header>
@@ -151,12 +155,19 @@
           A Barbershop
         </h2>
 
-        <p class="about-deskripsi">
+        <p class="about-deskripsi" id="about-deskripsi">
           Kami hadir untuk memberikan pengalaman grooming terbaik untuk pria
-          modern dengan pelayanan profesional dan suasana nyaman.
+          modern dengan pelayanan profesional dan suasana nyaman. <br />
+
+          <span class="tambahan">
+            Di TEVARO, kami tidak hanya menawarkan potong rambut, tetapi juga
+            pengalaman yang membuat Anda merasa lebih percaya diri. Dengan
+            barber profesional, peralatan berkualitas, dan suasana yang nyaman,
+            setiap kunjungan dirancang untuk memberikan hasil terbaik.
+          </span>
         </p>
 
-        <a href="#" class="btn-about">Learn More</a>
+        <button id="more" class="btn-about">Learn More</button>
       </div>
 
       <div>
@@ -329,6 +340,35 @@
 
           <h4 class="fitur-title-testimoni">- Dimas Arya</h4>
         </div>
+      </div>
+    </section>
+
+    <section class="lokasi" id="lokasi">
+      <div class="lokasi-deskripsi">
+        <p class="lokasi-title">LOKASI KAMI</p>
+        <h2 class="lokasi-subtitle">
+          Ruang Nyaman Untuk<br />
+          <span>Gaya Maskulin Terbaikmu</span>
+        </h2>
+        <div class="lokasi-fitur">
+          <i class="bi bi-geo-alt"></i>
+          <p class="lokasi-teks">Jl. Kopi Nikmat No. 10</p>
+          <p class="lokasi-subteks">Kawasan Strategis Kota Sejahtera</p>
+        </div>
+        <div class="lokasi-fitur">
+          <i class="bi bi-clock-fill"></i>
+          <p class="lokasi-teks">Melayani Anda Setiap Hari</p>
+          <p class="lokasi-subteks">10.00 AM - 09.00 PM</p>
+        </div>
+        <a href="https://maps.google.com" target="_blank" class="btn-lokasi"
+          >Temukan Kami di Maps</a
+        >
+      </div>
+
+      <div class="lokasi-image">
+        <a href="https://maps.google.com" target="_blank">
+          <img src="lokasi(1).jpg" alt="Lokasi Tevaro Barbershop" />
+        </a>
       </div>
     </section>
 
