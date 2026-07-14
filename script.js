@@ -1,5 +1,6 @@
 const hamburger = document.getElementById("hamburger");
 const menu = document.querySelector(".menu");
+const navlink = document.querySelectorAll(".navbar a");
 
 hamburger.addEventListener("click", () => {
   menu.classList.toggle("active");
@@ -17,4 +18,11 @@ more.addEventListener("click", () => {
   } else {
     more.textContent = "Learn More ";
   }
+});
+
+navlink.forEach((link) => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("active"); // Menghapus class active di tombol hamburger
+    menu.classList.remove("active"); // Menghapus class active di daftar menu agar menutup
+  });
 });
