@@ -4,6 +4,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 108px;
 }
 
 body {
@@ -11,8 +12,13 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
 .navbar {
-  position: relative;
   width: 100%;
   z-index: 1000;
   background: black;
@@ -36,9 +42,8 @@ body {
 }
 
 .logo {
-  width: 75px;
-  height: auto;
-  display: block;
+  width: 100%;
+  max-width: 75px;
 }
 
 .nama {
@@ -949,7 +954,10 @@ body {
   border: 2px solid gray;
 }
 
-@media screen and (max-width: 1024px) {
+@media (max-width: 1024px) {
+  html {
+    scroll-padding-top: 150px;
+  }
   /* ================= NAVBAR ================= */
 
   .navbar {
@@ -967,9 +975,8 @@ body {
   }
 
   .logo {
-    width: 85px;
-    height: auto;
-    display: block;
+    width: 100%;
+    max-width: 86px;
   }
 
   .nama {
@@ -1426,7 +1433,10 @@ body {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 125px;
+  }
   /* ============== NAVBAR ============== */
 
   .navbar {
@@ -1434,9 +1444,8 @@ body {
   }
 
   .logo {
-    width: 65px;
-    height: auto;
-    display: block;
+    width: 100%;
+    max-width: 69px;
   }
 
   .nama {
@@ -1722,7 +1731,10 @@ body {
 /* =================== MOBILE 512PX ================ */
 /* ================================================= */
 
-@media screen and (max-width: 512px) {
+@media (max-width: 512px) {
+  html {
+    scroll-padding-top: 100px;
+  }
   /* ============== NAVBAR ============== */
 
   .navbar {
@@ -1730,9 +1742,8 @@ body {
   }
 
   .logo {
-    width: 55px;
-    height: auto;
-    display: block;
+    width: 100%;
+    max-width: 53px;
   }
 
   .kiri {
